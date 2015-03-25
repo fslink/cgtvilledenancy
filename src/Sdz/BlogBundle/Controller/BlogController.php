@@ -105,4 +105,23 @@ class BlogController extends Controller
 			return new Response('Ce mail est un spam ' . $nbChar);
 		}
 	}
+
+	/**
+	* Action service2
+	* @Route("/spam1", name="sdz_blog_spam2")
+	*/
+	public function recupText2(){
+		$contenu = $this->renderView('SdzBlogBundle:Blog:email.txt.twig'); 
+
+		$antispam = $this->container->get('sdz_blog.crawler');
+
+		if ($antispam->isNotSpam($contenu)) {
+			return $this->render('SdzBlogBundle:Blog:email.txt.twig');
+		}
+		else{
+			$local = $antispam->getlocal();
+			$nbChar = $antispam->getnbChar();
+			return new Response('Ce mail est un spam ' . $nbChar);
+		}
+	}
 }
