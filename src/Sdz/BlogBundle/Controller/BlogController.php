@@ -107,7 +107,7 @@ class BlogController extends Controller
 	}
 
 	/**
-	* Action service2
+	* Action service
 	* @Route("/spam1", name="sdz_blog_spam2")
 	*/
 	public function recupText2(){
