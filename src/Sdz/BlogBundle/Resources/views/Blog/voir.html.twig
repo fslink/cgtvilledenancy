@@ -1,0 +1,15 @@
+{% extends 'SdzBlogBundle::layout.html.twig' %}
+
+{% block title %} {{ parent() }} - Index {% endblock %}
+
+{% block body %}
+	
+		    {% if article.image != null %}
+				<img src="{{ asset('bundles/sdzblog/images/' ~ article.image.url) }}" alt="{{ article.image.alt }}">
+		    {% endif %}
+		    
+		    <h2>{{ article.titre }}</h2>
+		    	<p>{{ article.contenu }}</p>
+		    	<p>{{ article.auteur|upper}}</p>
+		  
+{% endblock %}

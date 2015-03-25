@@ -1,0 +1,4 @@
+orga_time_homepage:
+    resource: "@OrgaTimeBundle/Controller/TimeElapsed"
+    type: annotation
+    prefix: /time

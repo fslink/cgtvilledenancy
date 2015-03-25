@@ -1,0 +1,4 @@
+sdz_blog:
+    resource: "@SdzBlogBundle/Controller"
+    type:     annotation
+    prefix: /blog

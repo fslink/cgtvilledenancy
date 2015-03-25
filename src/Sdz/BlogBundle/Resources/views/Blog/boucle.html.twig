@@ -1,0 +1,17 @@
+<html>
+	<head></head>
+	<body>
+		<select>
+			{% for key, valeur in contenu %}
+		    	<option value="{{ key }}">{{ valeur }}</option>
+			{% endfor %}
+		</select>
+			
+			{% for valeur in nombres %}
+				<span class="{% if loop.index is even %}pair{% else %}impair{% endif %}">
+					{{ valeur }}
+				</span>
+			{% endfor %}
+		</select>
+<	</body>
+</html>

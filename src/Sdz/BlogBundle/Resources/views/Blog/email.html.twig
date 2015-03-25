@@ -1,0 +1,14 @@
+<html>
+<head></head>
+<body>
+
+<p>	{{ salutations|trans }}</p>
+	<p> 
+	    {% for nombre in  nombres %}
+		    <span class="{% if nombre is even %}pair{% else %}impair{% endif %}"> {{ nombre }}</span>
+	    {% endfor %}
+	</p>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+{% extends 'SdzBlogBundle::layout.html.twig' %}
+
+{% block head %}
+	{{ parent() }}
+{% endblock %}
+	
+{% block body %}
+	{{ parent() }}
+
+	Ajouter un article:
+	{% include 'SdzBlogBundle:Blog:formulaire.html.twig' %}
+
+{% endblock %}
+
+	
+

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	{% block head %}
+		 <head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title>{% block title %}LAYOUT{% endblock %}</title>
+			{% block stylesheets %}
+			    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+			{% endblock %}
+		 </head>   
+	{% endblock %}
+	
+
+		<body>
+			
+			<div class="container">
+				<div id="header" class="hero-unit">
+					<h1>{{ 'Mon Projet Symfony2'|trans }}</h1>
+					<p> {{ 'Ce projet est propulsé par Symfony2'|trans }}</p>
+					<p><a class="btn btn-primary btn-large" href="http://openclassrooms.com/">{{ 'Lire le Tutoriel'|trans }}</a></p>
+				</div>
+				<div class="row">
+					<div id="menu" class="span3">
+							<h3>{{ 'Le blog'|trans }}</h3>
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="{{ path('sdz_blog_home') }}">{{ 'Accueil'|trans }}</a></li>
+									<li><a href="{{ path('sdz_blog_ajouter') }}"></a>{{ 'Ajouter'|trans }}</li>
+								</ul>
+
+								{{ render(controller("SdzBlogBundle:Blog:menu", {'nombre' : 3})) }}
+					</div>
+					<div id="content" class="span9">
+						{% block body %}
+						{% endblock %}
+					</div>
+				</div>
+				
+				<hr>
+
+				<footer>
+					<p> 2007-2015 Ministry of Type</p>
+				</footer>
+			</div>
+		{% javascripts 'js/bootstrap.js' %}
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		    <script type="text/javascript" src="{{ asset_url }}"> </script>
+		{% endjavascripts %}
+	</body>
+</html>

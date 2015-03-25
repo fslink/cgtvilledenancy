@@ -1,0 +1,4 @@
+services:
+    sdz_blog.crawler:
+        class: Sdz\BlogBundle\Crawler\Crawler
+        arguments: [%locale%, 500000]

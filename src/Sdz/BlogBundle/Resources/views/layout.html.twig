@@ -1,0 +1,12 @@
+{% extends "::layout.html.twig" %}
+
+    {% block head %}
+	    <head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<title>{% block title %}LE BLOG DE LA MORT{% endblock %}</title>
+		</head>
+	{% endblock %}
+		
+	{% block body %}
+		{{ parent() }}
+	{% endblock %}
